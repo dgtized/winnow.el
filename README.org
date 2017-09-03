@@ -2,6 +2,18 @@
 #+AUTHOR: Charles L.G. Comstock
 #+EMAIL: dgtized@gmail.com
 
+#+BEGIN_QUOTE
+Winnow - verb
+
+1.  Blow a current of air through (grain) in order to remove the chaff.
+
+1.1.  Remove (chaff) from grain.
+
+1.2.  Remove (people or things) from a group until only the best ones are left.
+
+1.3.  Find or identify (a valuable or useful part of something)
+#+END_QUOTE
+
 * Usage
 
 Winnow the results from ~compilation-mode~ buffers by matching or excluding
