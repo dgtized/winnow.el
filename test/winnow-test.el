@@ -5,7 +5,8 @@
 (require 'ag)
 
 (defun switch-to-output (filename)
-  (find-file (expand-file-name filename "test")))
+  (let ((r (concat (locate-dominating-file "winnow.el" "test") "test")))
+    (find-file (expand-file-name filename r))))
 
 (ert-deftest results-start-ag ()
   (save-excursion
