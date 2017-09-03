@@ -50,6 +50,16 @@ And then add the following somewhere in your emacs initialization
   (add-hook 'ag-mode-hook 'winnow-mode)
 #+END_SRC
 
+Broadly it should work anything that derives from ~compilation-mode~ so
+
+#+BEGIN_SRC emacs-lisp
+  (add-hook 'compilation-mode-hook 'winnow-mode)
+#+END_SRC
+
+will enable it everywhere. That should definitely work on ~grep-mode~, and may
+be applicable to other compilation modes. Unfortunately it is not applicable for
+~rspec-mode~ as it currently stands.
+
 * License
 
 Copyright © 2017 Charles L.G. Comstock
