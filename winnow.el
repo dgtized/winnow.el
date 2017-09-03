@@ -48,21 +48,26 @@
 ;;; Code:
 
 (defun winnow-results-start ()
-  "Find the start position of the compilation output"
+  "Find the start position of the compilation output."
   (save-excursion
     (goto-char (point-min))
     (forward-line 4) ;; TODO: replace ballistic offset with search
     (point)))
 
 (defun winnow-results-end ()
-  "Find the end position of the compilation output"
+  "Find the end position of the compilation output."
   (save-excursion
     (goto-char (point-max))
     (forward-line -7) ;; TODO: replace ballistic offset with search
     (point)))
 
 (defun winnow-exclude-lines (regexp &optional rstart rend interactive)
-  "Exclude the matching lines from the compilation results."
+  "Exclude the REGEXP matching lines from the compilation results.
+
+Ignores read-only-buffer to exclude lines from a result.
+
+See `flush-lines' for additional details about arguments REGEXP,
+RSTART, REND, INTERACTIVE."
   (interactive (keep-lines-read-args "Flush lines containing match for regexp"))
   (let ((inhibit-read-only t)
         (start (or rstart (winnow-results-start)))
@@ -71,7 +76,13 @@
     (goto-char (point-min))))
 
 (defun winnow-match-lines (regexp &optional rstart rend interactive)
-  "Limit the compilation results to the matching lines."
+  "Limit the compilation results to the lines matching REGEXP.
+
+Ignores read-only-buffer to focus on matching lines from a
+result.
+
+See `keep-lines' for additional details about arguments REGEXP,
+RSTART, REND, INTERACTIVE."
   (interactive (keep-lines-read-args "Keep lines containing match for regexp"))
   (let ((inhibit-read-only t)
         (start (or rstart (winnow-results-start)))
