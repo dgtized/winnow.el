@@ -72,7 +72,7 @@ RSTART, REND, INTERACTIVE."
   (let ((inhibit-read-only t)
         (start (or rstart (winnow-results-start)))
         (end (or rend (winnow-results-end))))
-    (flush-lines regexp start end nil)
+    (flush-lines regexp start end interactive)
     (goto-char (point-min))))
 
 (defun winnow-match-lines (regexp &optional rstart rend interactive)
@@ -87,7 +87,7 @@ RSTART, REND, INTERACTIVE."
   (let ((inhibit-read-only t)
         (start (or rstart (winnow-results-start)))
         (end (or rend (winnow-results-end))))
-    (keep-lines regexp start end nil)
+    (keep-lines regexp start end interactive)
     (goto-char (point-min))))
 
 ;;;###autoload
