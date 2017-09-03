@@ -1,4 +1,4 @@
-;;; winnow.el --- filter compilation/ag results by matching/excluding lines -*- lexical-binding: t; -*-
+;;; winnow.el --- winnow ag/grep results by matching/excluding lines -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2017  Charles L.G. Comstock
 
@@ -7,6 +7,7 @@
 ;; Version: 0.1
 ;; URL: https://github.com/dgtized/winnow.el
 ;; Keywords: matching
+;; Package-Requires: ((emacs "24"))
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
