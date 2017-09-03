@@ -1,0 +1,35 @@
+#+TITLE: winnow.el
+#+AUTHOR: Charles L.G. Comstock
+#+EMAIL: dgtized@gmail.com
+
+* Usage
+
+Winnow the results from ~compilation-mode~ buffers by matching or excluding
+lines from the results.
+
+This was written to enhance [[https://github.com/Wilfred/ag.el][ag.el]], by filtering ~ag-mode~ results buffers.
+
+The following key bindings are enabled:
+
+| Key | Function             |
+|-----+----------------------|
+| x   | winnow-exclude-lines |
+| m   | winnow-match-lines   |
+
+* Install
+
+Using ~package-install-file~,
+
+ : M-x package-install-file [RET] /path/to/winnow.el [RET]
+
+And then add the following somewhere in your emacs initialization
+
+#+BEGIN_SRC emacs-lisp
+  (add-hook 'ag-mode-hook 'winnow-mode)
+#+END_SRC
+
+* License
+
+Copyright © 2017 Charles L.G. Comstock
+
+Distributed under the GNU General Public License, version 3
