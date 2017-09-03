@@ -1,11 +1,18 @@
 ;;; winnow-test.el --- Tests for winnow
 
-(ert-deftest winnow--results-start ()
-  (switch-to-buffer (find-file "output-ag.txt" ))
-  (should (equal 273 (winnow-results-start))))
+(require 'ert)
+(require 'winnow)
+(require 'ag)
 
-(ert-deftest winnow--results-end ()
-  (switch-to-buffer (find-file "output-ag.txt"))
-  (should (equal 621 (winnow-results-end))))
+(defun setup-ag-buffer ()
+  (switch-to-buffer (find-file (expand-file-name "output-ag.txt" "test"))))
+
+(ert-deftest results-start ()
+  (setup-ag-buffer)
+  (should (equal (winnow-results-start) 273)))
+
+(ert-deftest results-end ()
+  (setup-ag-buffer)
+  (should (equal (winnow-results-end) 621)))
 
 ;;; winnow-test.el ends here
