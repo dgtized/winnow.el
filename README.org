@@ -19,7 +19,8 @@ Winnow - verb
 Winnow the results from ~compilation-mode~ buffers by matching or excluding
 lines from the results.
 
-This was written to enhance [[https://github.com/Wilfred/ag.el][ag.el]], by filtering ~ag-mode~ results buffers.
+This was written to enhance [[https://github.com/Wilfred/ag.el][ag.el]], by filtering ~ag-mode~ results buffers by
+iteratively applying match and exclude, winnowing the results.
 
 The following key bindings are enabled:
 
@@ -27,6 +28,9 @@ The following key bindings are enabled:
 |-----+----------------------|
 | x   | winnow-exclude-lines |
 | m   | winnow-match-lines   |
+
+The builtin ~highlight-regexp~ (=M-s h r=) can be used to show interesting
+matches in the set.
 
 * Install
 
