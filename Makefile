@@ -1,8 +1,7 @@
 EMACS ?= emacs
 CASK ?= cask
-PKG_DIR := $(shell ${CASK} package-directory)
 
-all: test
+all: .cask test
 
 test: clean-elc ert-runner
 
@@ -18,10 +17,10 @@ compile:
 clean-elc:
 	rm -f winnow.elc
 
-elpa: ${PKG_DIR}
-
-${PKG_DIR}:
+.cask:
 	${CASK} install
-	touch $@
+
+distclean: clean-elc
+	rm -rf .cask
 
 .PHONY:	all test compile clean-elc ert-runner
