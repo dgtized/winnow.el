@@ -2,6 +2,8 @@
 #+AUTHOR: Charles L.G. Comstock
 #+EMAIL: dgtized@gmail.com
 
+[[https://circleci.com/gh/dgtized/winnow.el.svg?style=svg]]
+
 #+BEGIN_QUOTE
 Winnow - verb
 
