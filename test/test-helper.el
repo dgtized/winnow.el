@@ -12,7 +12,11 @@
   (unless (equal "/" dir)
     (file-name-directory (directory-file-name dir))))
 
-(let ((winnow-dir (directory-parent (file-name-directory (buffer-file-name)))))
+(let ((winnow-dir (directory-parent (file-name-directory load-file-name))))
   (add-to-list 'load-path winnow-dir))
+
+(require 'winnow)
+
+(provide 'test-helper)
 
 ;;; test-helper.el ends here
