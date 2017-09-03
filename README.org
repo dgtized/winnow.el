@@ -32,6 +32,10 @@ The following key bindings are enabled:
 The builtin ~highlight-regexp~ (=M-s h r=) can be used to show interesting
 matches in the set.
 
+Basic workflow is to run an ag search (through say ~projectile-ag~), and then use
+~winnow-exclude-lines~ and ~winnow-match-lines~ to keep/flush matching lines in
+the search results. If it's too filtered, just ~recompile~.
+
 * Install
 
 Using ~package-install-file~,
