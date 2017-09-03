@@ -4,15 +4,27 @@
 (require 'winnow)
 (require 'ag)
 
-(defun setup-ag-buffer ()
-  (switch-to-buffer (find-file (expand-file-name "output-ag.txt" "test"))))
+(defun switch-to-output (filename)
+  (find-file (expand-file-name filename "test")))
 
-(ert-deftest results-start ()
-  (setup-ag-buffer)
-  (should (equal (winnow-results-start) 233)))
+(ert-deftest results-start-ag ()
+  (save-excursion
+    (switch-to-output "output-ag.txt")
+    (should (equal (winnow-results-start) 233))))
 
-(ert-deftest results-end ()
-  (setup-ag-buffer)
-  (should (equal (winnow-results-end) 581)))
+;; (ert-deftest results-start-grep ()
+;;   (save-excursion
+;;     (switch-to-output "output-grep.txt")
+;;     (should (equal (winnow-results-start) 103))))
+
+(ert-deftest results-end-ag ()
+  (save-excursion
+    (switch-to-output "output-ag.txt")
+    (should (equal (winnow-results-end) 581))))
+
+;; (ert-deftest results-end-grep ()
+;;   (save-excursion
+;;     (switch-to-output "output-grep.txt")
+;;     (should (equal (winnow-results-end) 401))))
 
 ;;; winnow-test.el ends here

@@ -1,0 +1,10 @@
+-*- mode: grep -*-
+Grep started at Sun Sep  3 05:59:42
+
+git --no-pager grep -n -e winnow-exclude -- *
+README.org:31:| x   | winnow-exclude-lines |
+README.org:38:~winnow-exclude-lines~ and ~winnow-match-lines~ to keep/flush matching lines in
+winnow.el:66:(defun winnow-exclude-lines (regexp &optional rstart rend interactive)
+winnow.el:103:            (define-key map (kbd "x") 'winnow-exclude-lines)
+
+Grep finished (matches found) at Sun Sep  3 05:59:42
