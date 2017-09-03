@@ -1,4 +1,4 @@
--*- mode: ag; default-directory: "~/code/winnow.el/" -*-
+-*- mode: ag -*-
 Ag started at Sun Sep  3 03:14:33
 
 ag --ignore \*.min.js --ignore vendor/assets/\* --literal --nogroup --line-number --column --color --color-match 30\;43 --color-path 1\;32 --smart-case --stats -- winnow-results .

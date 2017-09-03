@@ -9,10 +9,10 @@
 
 (ert-deftest results-start ()
   (setup-ag-buffer)
-  (should (equal (winnow-results-start) 273)))
+  (should (equal (winnow-results-start) 233)))
 
 (ert-deftest results-end ()
   (setup-ag-buffer)
-  (should (equal (winnow-results-end) 621)))
+  (should (equal (winnow-results-end) 581)))
 
 ;;; winnow-test.el ends here
