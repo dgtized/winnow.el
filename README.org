@@ -16,6 +16,8 @@ Winnow - verb
 1.3.  Find or identify (a valuable or useful part of something)
 #+END_QUOTE
 
+[[file:winnow.gif]]
+
 * Usage
 
 Winnow the results from ~compilation-mode~ buffers by matching or excluding
