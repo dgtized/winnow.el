@@ -2,6 +2,7 @@
 #+AUTHOR: Charles L.G. Comstock
 #+EMAIL: dgtized@gmail.com
 
+[[https://melpa.org/#/winnow][file:https://melpa.org/packages/winnow-badge.svg]]
 [[https://circleci.com/gh/dgtized/winnow.el][https://circleci.com/gh/dgtized/winnow.el.svg?style=svg]]
 
 #+BEGIN_QUOTE
@@ -42,9 +43,9 @@ the search results. If it's too filtered, just ~recompile~.
 
 * Install
 
-Using ~package-install-file~,
+Using the [[https://melpa.milkbox.net][MELPA]] package archive, 
 
- : M-x package-install-file [RET] /path/to/winnow.el [RET]
+ : M-x package-install [RET] winnow [RET]
 
 And then add the following somewhere in your emacs initialization
 
