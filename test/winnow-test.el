@@ -11,7 +11,8 @@
 (ert-deftest results-start-ag ()
   (save-excursion
     (switch-to-output "output-ag.txt")
-    (should (equal (winnow-results-start) 233))))
+    (should (equal (winnow-results-start) 233))
+    (should (equal (winnow-results-content-start) 151))))
 
 ;; (ert-deftest results-start-grep ()
 ;;   (save-excursion
