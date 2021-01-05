@@ -1,6 +1,6 @@
 ;;; winnow.el --- winnow ag/grep results by matching/excluding lines -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2017  Charles L.G. Comstock
+;; Copyright (C) 2017-2021  Charles L.G. Comstock
 
 ;; Author: Charles L.G. Comstock <dgtized@gmail.com>
 ;; Created: 3 Sept 2017

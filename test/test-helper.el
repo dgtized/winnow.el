@@ -1,6 +1,6 @@
 ;;; test-helper.el --- Helper for tests              -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2017 Charles L.G. Comstock
+;; Copyright (C) 2017-2021 Charles L.G. Comstock
 
 ;; Author: Charles L.G. Comstock <dgtized@gmail.com>
 
