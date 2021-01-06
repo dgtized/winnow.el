@@ -6,4 +6,4 @@ jobs:
     working_directory: ~/winnow.el
     steps:
       - checkout
-      - run: PATH="/root/.cask/bin:$PATH" make
+      - run: make
