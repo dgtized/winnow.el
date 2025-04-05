@@ -65,6 +65,6 @@ be applicable to other compilation modes. Unfortunately it is not applicable for
 
 * License
 
-Copyright © 2017-2021 Charles L.G. Comstock
+Copyright © 2017-2025 Charles L.G. Comstock
 
 Distributed under the GNU General Public License, version 3
