@@ -3,7 +3,7 @@
 #+EMAIL: dgtized@gmail.com
 
 [[https://melpa.org/#/winnow][file:https://melpa.org/packages/winnow-badge.svg]]
-[[https://circleci.com/gh/dgtized/winnow.el][https://circleci.com/gh/dgtized/winnow.el.svg?style=svg]]
+[[https://github.com/dgtized/winnow.el/actions][file:https://github.com/dgtized/winnow.el/actions/workflows/ci.yaml/badge.svg?branch=master]]
 
 #+BEGIN_QUOTE
 Winnow - verb
@@ -60,11 +60,13 @@ Broadly it should work anything that derives from ~compilation-mode~ so
 #+END_SRC
 
 will enable it everywhere. That should definitely work on ~grep-mode~, and may
-be applicable to other compilation modes. Unfortunately it is not applicable for
-~rspec-mode~ as it currently stands.
+be applicable to other compilation modes. It should work even without a
+compilation mode buffer, if enabled as a minor mode, but it's functionality may
+not be as useful. It has been tested this way with ~occur-mode~ and appears to
+work nicely.
 
 * License
 
-Copyright © 2017-2021 Charles L.G. Comstock
+Copyright © 2017-2025 Charles L.G. Comstock
 
 Distributed under the GNU General Public License, version 3

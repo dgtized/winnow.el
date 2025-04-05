@@ -1,6 +1,6 @@
 ;;; winnow.el --- winnow ag/grep results by matching/excluding lines -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2017-2021  Charles L.G. Comstock
+;; Copyright (C) 2017-2025  Charles L.G. Comstock
 
 ;; Author: Charles L.G. Comstock <dgtized@gmail.com>
 ;; Created: 3 Sept 2017
@@ -39,7 +39,10 @@
 
 ;; Enable the package in `ag-mode' with the following:
 ;;
-;;  (add-hook 'ag-mode-hook 'winnow-mode)
+;; (add-hook 'ag-mode-hook 'winnow-mode)
+;;
+;; Or `occur-mode':
+;; (add-hook 'occur-mode-hook 'winnow-mode)
 
 ;;; Todo:
 
@@ -54,15 +57,17 @@
   "Find the start position of the compilation output."
   (save-excursion
     (goto-char (point-min))
-    (compilation-next-error 1)
-    (point-at-bol 1)))
+    (when (compilation-buffer-p (current-buffer))
+      (compilation-next-error 1))
+    (line-beginning-position 1)))
 
 (defun winnow-results-end ()
   "Find the end position of the compilation output."
   (save-excursion
     (goto-char (point-max))
-    (compilation-next-error -1)
-    (point-at-bol 2)))
+    (when (compilation-buffer-p (current-buffer))
+      (compilation-next-error -1))
+    (line-beginning-position 2)))
 
 (defun winnow-exclude-lines (regexp &optional rstart rend interactive)
   "Exclude the REGEXP matching lines from the compilation results.
