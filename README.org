@@ -3,7 +3,7 @@
 #+EMAIL: dgtized@gmail.com
 
 [[https://melpa.org/#/winnow][file:https://melpa.org/packages/winnow-badge.svg]]
-[[https://circleci.com/gh/dgtized/winnow.el][https://circleci.com/gh/dgtized/winnow.el.svg?style=svg]]
+file:https://github.com/dgtized/winnow.el/actions/workflows/ci.yaml/badge.svg?branch=master
 
 #+BEGIN_QUOTE
 Winnow - verb
