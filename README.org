@@ -60,8 +60,10 @@ Broadly it should work anything that derives from ~compilation-mode~ so
 #+END_SRC
 
 will enable it everywhere. That should definitely work on ~grep-mode~, and may
-be applicable to other compilation modes. Unfortunately it is not applicable for
-~rspec-mode~ as it currently stands.
+be applicable to other compilation modes. It should work even without a
+compilation mode buffer, if enabled as a minor mode, but it's functionality may
+not be as useful. It has been tested this way with ~occur-mode~ and appears to
+work nicely.
 
 * License
 
