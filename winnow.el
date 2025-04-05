@@ -59,7 +59,7 @@
     (goto-char (point-min))
     (when (compilation-buffer-p (current-buffer))
       (compilation-next-error 1))
-    (point-at-bol 1)))
+    (line-beginning-position 1)))
 
 (defun winnow-results-end ()
   "Find the end position of the compilation output."
@@ -67,7 +67,7 @@
     (goto-char (point-max))
     (when (compilation-buffer-p (current-buffer))
       (compilation-next-error -1))
-    (point-at-bol 2)))
+    (line-beginning-position 2)))
 
 (defun winnow-exclude-lines (regexp &optional rstart rend interactive)
   "Exclude the REGEXP matching lines from the compilation results.
