@@ -53,6 +53,14 @@
 
 (require 'compile)
 
+(defun winnow-results-content-start ()
+  "Find the start position of the compilation output of the content which include the first line of the result."
+  (save-excursion
+    (goto-char (point-min))
+    (compilation-next-error 1)
+    (vertical-motion -1)
+    (point-at-bol 1)))
+
 (defun winnow-results-start ()
   "Find the start position of the compilation output."
   (save-excursion
@@ -98,6 +106,28 @@ RSTART, REND, INTERACTIVE."
     (keep-lines regexp start end interactive)
     (goto-char (point-min))))
 
+(defun winnow-match-lines-with-extension (regexp &optional rstart rend interactive)
+  "Limit the compilation results to the lines with extenstion matching REGEXP.
+
+Using the matching REGEXP appending with REGEXP representing to new empty line,
+which represents the end of result for certain file.
+
+Ignores read-only-buffer to focus on matching lines from a
+result.
+
+See `keep-lines' for additional details about arguments REGEXP,
+RSTART, REND, INTERACTIVE."
+  (interactive (keep-lines-read-args "Keep lines containing extension for regexp"))
+  (let ((inhibit-read-only t)
+        (start (or rstart (winnow-results-content-start)))
+        (end (or rend (winnow-results-end)))
+        ;; The preset REGEXP represents the result in a file in ag
+        ;; which includes newline after the extension until a newline
+        ;; without characters.
+        (fullregex (concat regexp "\n\\(.+\n\\)+")))
+    (keep-lines fullregex start end interactive)
+    (goto-char (point-min))))
+
 ;;;###autoload
 (define-minor-mode winnow-mode
   "Filter compilation results by matching/excluding lines.
@@ -108,6 +138,7 @@ This is invaluable for excluding or limiting to matching `ag-mode' results.
   :keymap (let ((map (make-sparse-keymap)))
             (define-key map (kbd "x") 'winnow-exclude-lines)
             (define-key map (kbd "m") 'winnow-match-lines)
+            (define-key map (kbd "e") 'winnow-match-lines-with-extension)
             map))
 
 (provide 'winnow)
