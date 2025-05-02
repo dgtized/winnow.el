@@ -37,9 +37,10 @@ The following key bindings are enabled:
 The builtin ~highlight-regexp~ (=M-s h r=) can be used to show interesting
 matches in the set.
 
-Basic workflow is to run an ag search (through say ~projectile-ag~), and then use
-~winnow-exclude-lines~ and ~winnow-match-lines~ to keep/flush matching lines in
-the search results. If it's too filtered, just ~recompile~.
+Basic workflow is to run an ag search (through say ~projectile-ag~), and then
+use ~winnow-exclude-lines~ and ~winnow-match-lines~ to keep/flush matching lines
+in the search results. If it's too filtered, just ~recompile~ the buffer to
+restart the original search and re-apply match and exclude filters.
 
 [[https://www.youtube.com/watch?v=BjX8-D-NonY][Emacs Elements: Winnow]] has a longer video demonstration.
 
