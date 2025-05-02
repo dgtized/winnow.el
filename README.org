@@ -41,6 +41,8 @@ Basic workflow is to run an ag search (through say ~projectile-ag~), and then us
 ~winnow-exclude-lines~ and ~winnow-match-lines~ to keep/flush matching lines in
 the search results. If it's too filtered, just ~recompile~.
 
+[[https://www.youtube.com/watch?v=BjX8-D-NonY][Emacs Elements: Winnow]] has a longer video demonstration.
+
 * Install
 
 Using the [[https://melpa.milkbox.net][MELPA]] package archive, 
